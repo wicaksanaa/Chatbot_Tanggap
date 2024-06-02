@@ -1,0 +1,5 @@
+Flask==3.0.3
+numpy
+tensorflow
+scikit-learn
+Werkzeug==3.0.0
