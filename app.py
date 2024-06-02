@@ -5,6 +5,7 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.preprocessing.text import Tokenizer
 from sklearn.preprocessing import LabelEncoder
+import os
 
 # Load dataset
 with open('Dataset Chatbot.json') as file:
@@ -64,4 +65,5 @@ def chatbot():
     return jsonify({'response': response})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug=True)
