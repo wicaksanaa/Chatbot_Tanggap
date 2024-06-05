@@ -36,7 +36,7 @@ label_encoder = LabelEncoder()
 integer_encoded = label_encoder.fit_transform(labels)
 
 # Load model
-model = load_model('my_model.keras')  # Update this line to load the .keras model
+model = load_model('chatbot_model.h5')  # Update this line to load the .keras model
 
 def preprocess_input(user_input):
     sequences = tokenizer.texts_to_sequences([user_input])
