@@ -36,7 +36,7 @@ label_encoder = LabelEncoder()
 integer_encoded = label_encoder.fit_transform(labels)
 
 # Load model
-model = load_model('chatbot_model.h5')
+model = load_model('my_model.keras')  # Update this line to load the .keras model
 
 def preprocess_input(user_input):
     sequences = tokenizer.texts_to_sequences([user_input])
@@ -47,7 +47,7 @@ def get_response(prediction):
     tag = label_encoder.inverse_transform([np.argmax(prediction)])
     for intent in data['intents']:
         if intent['tag'] == tag:
-            return np.random.choice(intent['response'])
+            return np.random.choice(intent['responses'])
 
 def chatbot_response(user_input):
     preprocessed_input = preprocess_input(user_input)
